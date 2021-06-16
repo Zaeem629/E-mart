@@ -14,7 +14,7 @@ const SearchedProduct = (props) => {
                     onPress={()=> {
                         props.navigation.navigate("Product Details" ,{item:item})
                     }}
-                    key={item._id.$oid}
+                    key={item._id}
                     avatar
                      >
                      <Left>
@@ -38,7 +38,7 @@ const SearchedProduct = (props) => {
             )}
         </Content>
     );
-}
+};
 
 const styles = StyleSheet.create({
         center: {

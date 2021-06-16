@@ -16,7 +16,7 @@ import {
     
 } from 'native-base';
 
-
+import EasyButton from '../../Shared/StyledComponents/EasyButton';
 import { SwipeListView } from 'react-native-swipe-list-view';
 
 import CartItem from './CartItem';
@@ -70,15 +70,22 @@ const Cart = (props) => {
                             <Text style={styles.price}>Rs{total}</Text>
                         </Left>
                         <Right>
-                            <Button
-                                title="Clear"
+                            <EasyButton
+                                danger
+                                medium
                                 onPress={() => props.clearCart()}
-                            />
+                            > 
+                            <Text style={styles.textStyle}>Clear</Text>
+                            </EasyButton>
                         </Right>
                         <Right>
-                            <Button title="Checkout"
+                            <EasyButton
+                                primary
+                                medium
                                 onPress={() => props.navigation.navigate('Checkout')}
-                            />
+                            >
+                            <Text style={styles.textStyle}>Checkout</Text>
+                            </EasyButton>
                         </Right>
                     </View>
                 </Container>
@@ -138,6 +145,10 @@ const styles = StyleSheet.create({
         paddingRight: 25,
         height: 70,
         width: width / 1.2
+    },
+    textStyle: {
+        color: "white",
+        fontWeight: "bold"
     }
 
 });

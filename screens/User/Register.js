@@ -7,6 +7,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import axios from 'axios';
 import baseURL from '../../assets/common/baseUrl';
 import Toast from 'react-native-toast-message';
+import EasyButton from '../../Shared/StyledComponents/EasyButton';
 
 const Register = (props) => {
 
@@ -100,14 +101,20 @@ const Register = (props) => {
                     {error ? <Error message={error} /> : null}
                 </View>
                 <View>
-                    <Button title={"Register"}
-                        onPress={() => register()}
-                    />
+                    <EasyButton
+                    large
+                    primary
+                    onPress={() => register()}>
+                    <Text style={styles.textStyle}>Register</Text>
+                    </EasyButton>
                 </View>
                 <View>
-                    <Button title={"Back to Login"}
-                        onPress={() => props.navigation.navigate("Login")}
-                    />
+                    <EasyButton
+                    large
+                    secondary
+                    onPress={() => props.navigation.navigate("Login")}>
+                    <Text style={styles.textStyle}>Back to Login</Text>
+                    </EasyButton>
                 </View>
             </FormContainer>
         </KeyboardAwareScrollView>
@@ -123,6 +130,10 @@ const styles = StyleSheet.create({
     middleText: {
         marginBottom: 20,
         alignSelf: "center"
+    },
+    textStyle: {
+        color: "white",
+        fontWeight: "bold"
     }
 });
 

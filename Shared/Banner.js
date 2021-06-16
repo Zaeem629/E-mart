@@ -35,7 +35,7 @@ const Banner = () => {
                                     resizeMode="contain"
                                     source={{uri:item}}
                                 />
-                            )
+                            );
                         })}
 
                     </Swiper>

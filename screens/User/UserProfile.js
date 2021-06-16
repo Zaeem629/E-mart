@@ -6,7 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import baseURL from '../../assets/common/baseUrl';
 import AuthGlobal from '../../Context/store/AuthGlobal';
-import { logoutUser } from '../../Context/actions/Auth.actions'
+import { logoutUser } from '../../Context/actions/Auth.actions';
 import { useEffect } from 'react/cjs/react.development';
 
 const UserProfile = (props) => {
@@ -28,12 +28,11 @@ const UserProfile = (props) => {
                     .get(`${baseURL}users/${context.stateUser.user.userId}`, {
                         headers: { Authorization: `Bearer ${res}` },
                     })
-                    // .then((user) => setUserProfile(user.data))
-                    .then((user) =>
-                    console.log(user.data));
+                    .then((user) => setUserProfile(user.data))
+                   
                     
             })
-            .catch((error) => console.log(error));
+            .catch((error) => console.log(error))
 
         return () => {
             setUserProfile();
